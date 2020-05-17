@@ -8,6 +8,21 @@
     <title>Rick & Morty</title>
 </head>
 <body>
- <script src="./js/index.js"></script>     
+    <main class="collection">
+        <header class="collection__header">
+            <h1 class="collection__heading">Rick and Morty</h1>
+            <p class="collection__subheader">Personal catalog</p>
+        </header>
+        <section class="collection__content" data-content></section>
+        <footer class="collection__footer">
+            <button class="collection__button" data-button>More!!!</button>
+            <div class="lds-heart"><div class="hide" data-loader></div></div>
+        </footer>
+    </main>
+ <script src="./js/index.js"></script>
+ <script>
+    const collection= new RMcollection();
+    collection.initializeCollection();
+</script>   
 </body>
 </html>

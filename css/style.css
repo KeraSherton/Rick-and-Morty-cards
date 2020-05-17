@@ -7,3 +7,41 @@
 body{
     font-family: 'Pangolin', cursive;
 }
+
+.collection{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+.collection__header{
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.collection__heading{
+    color: var(--secondary-color);
+    text-align: center;
+    font-size: 42px;
+}
+.collection__content {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    justify-items: center;
+    align-items: center;
+}
+.card__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card__image{
+    width: 250px;
+    height: 250px;
+}
+.hide{
+    display: none;
+}
