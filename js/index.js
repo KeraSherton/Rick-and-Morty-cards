@@ -3,18 +3,30 @@ class RMcollection{
         this.collection=null;
         this.cards=[];
         this.info=null;
+        this.button=null;
+        this.search=null;
+        this.loader=null;
 
 
         this.API= "https://rickandmortyapi.com/api/character";
+        
 
         this.UISelectors={
             content: '[data-content]',
+            button: '[data-button]',
+            loader: '[data-loader]',
         }
     }
 initializeCollection(){
     this.collection=document.querySelector(this.UISelectors.content);
-
+    this.button=document.querySelector(this.UISelectors.button);
+    this.loader=document.querySelector(this.UISelectors.loader);
+    this.addEventListeners();
     this.pullCards();
+}
+
+addEventListeners() {
+    this.button.addEventListener('click', () => this.pullMoreCards());
 }
 
 async pullCards(){
@@ -25,9 +37,9 @@ async pullCards(){
     console.log(this.next);
 }
 async pullMoreCards(){
-    // this.toggleShowElement(this.loader, this.button);
+    this.toggleShowElement(this.loader, this.button);
     const {results, info} =await this.fetchData(`${this.next}`);
-    // this.toggleShowElement(this.loader, this.button);
+    this.toggleShowElement(this.loader, this.button);
     this.cards=[...results];
     this.next=info.next;
     this.createCollection(this.cards);
