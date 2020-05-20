@@ -45,7 +45,12 @@ body{
 .hide{
     display: none;
 }
-
+.accordion{
+  cursor: pointer;
+}
+.panel{
+  display: none;
+}
 /*loader*/
 .lds-ripple {
     display: inline-block;
