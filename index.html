@@ -8,21 +8,40 @@
     <title>Rick & Morty</title>
 </head>
 <body>
-    <main class="collection">
+    <main class="collection" id="collection">
         <header class="collection__header">
             <h1 class="collection__heading">Rick and Morty</h1>
             <p class="collection__subheader">Personal catalog</p>
         </header>
-        <div class="search">
-            <input type="text" name="search" id="search" placeholder="Search card" autocomplete="off" class="search__input">
-            <button class="search__button" data-search>search</button>
-        </div>
-        <div class="create">
-            <button class="create__button" data-create>create!!!!</button>
-        </div>
-        <section class="collection__content" data-content></section>
+        <section class="collection__header">
+            <fieldset class="search format">
+                <legend class="accordion">Search card by name</legend>
+                <div class="panel">
+                    <input type="text" name="search" id="search" placeholder="Search card" autocomplete="off" class="search__input">
+                    <button class="button" data-search>Search</button>
+                </div>
+            </fieldset>
+            <fieldset class="create format">
+                <legend class="accordion">Or add data for new card:</legend>
+                <div class="panel">
+                    <input id="LsName" type="text" placeholder="Name">
+                    <input id="LsSpecies" type="text" placeholder="Species">
+                    <input id="LsStatus" type="text" placeholder="Status">
+                    <input id="LsImage" type="text" placeholder="Image url">
+                    <input id="LsGender" type="text" placeholder="Gender">
+                    <input id="LsLocation" type="text" placeholder="Location">
+                    <button id="save-button" class="button" data-save>Save data</button>
+                </div>
+            </fieldset>
+            <button id="create-button" class="button" data-create>Create card</button>
+        </section>
+        <section id="collection-section" data-section>
+            <div id="collection-content" class="collection__content"  data-content>
+                
+            </div> 
+        </section>
         <footer class="collection__footer">
-            <button class="collection__button" data-button>More!!!</button>
+            <button id="more-button" class="button" data-button>More!!!</button>
             <div class="lds-ripple" >
                 <div class="hide" data-loader></div>
                 <div class="hide" data-loader></div>
@@ -34,5 +53,11 @@
     const collection= new RMcollection();
     collection.initializeCollection();
 </script>   
+<script src="./js/localStorage.js">
+</script>
+<script src="./js/accordion.js">
+</script>
+
 </body>
 </html>
+

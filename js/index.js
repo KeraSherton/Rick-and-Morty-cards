@@ -1,3 +1,4 @@
+
 class RMcollection{
     constructor(){
         this.collection=null;
@@ -9,6 +10,7 @@ class RMcollection{
         this.card=null;
         this.search_button=null;
         this.results=null;
+        this.create_button=null;
 
         this.API= "https://rickandmortyapi.com/api/character";
         
@@ -36,6 +38,7 @@ addEventListeners() {
     this.button.addEventListener('click', () => this.pullMoreCards());
     this.search_button.addEventListener('click', () => this.searchPerson());
     
+    
 }
 
 async pullCards(){
@@ -58,7 +61,7 @@ async pullMoreCards(){
 async searchPerson(){
     console.log(this.cards);
     this.cards.forEach(({id})=> document.getElementById(id).classList.add('hide'));
-      
+    this.newCards ? this.cards.forEach(({id})=> document.getElementById(id).classList.add('hide')): null ;
     const searchQuery= this.search.value.toLowerCase();
     // searchQuery ? this.button.classList.add('hide') : this.button.classList.remove('hide');
     
@@ -97,4 +100,9 @@ createCard({ name, id, species, image, status, gender, location}){
 toggleShowElement(...elements) {
     elements.forEach((element) => element.classList.toggle('hide'));
   }
+
+
+
+
+  
 }
