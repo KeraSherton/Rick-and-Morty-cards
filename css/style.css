@@ -1,3 +1,12 @@
+:root{
+  --primary-color: #f9bf1e;
+  --primary-color--light: #f3eab8;
+  --secondary-color: #43b7bb ;
+  --secondary-color--light: #C1F752;
+
+}
+
+
 *, *::after, *::before{
     margin:0;
     padding:0;
@@ -24,7 +33,19 @@ body{
 .collection__heading{
     color: var(--secondary-color);
     text-align: center;
-    font-size: 42px;
+    font-size: 56px;
+    text-shadow: -1px -1px 0px #000,
+    0px -1px 0px #000,
+    1px -1px 0px #000,
+   -1px  0px 0px #000,
+    1px  0px 0px #000,
+   -1px  1px 0px #000,
+    0px  1px 0px #000,
+    1px  1px 0px #000,
+    0 0 20px var(--secondary-color--light);
+}
+.collection__subheader{
+  font-size: 35px;
 }
 .collection__content {
     display: grid;
@@ -32,6 +53,10 @@ body{
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     justify-items: center;
     align-items: center;
+}
+.collection__footer{
+  display: flex;
+  justify-content: center;
 }
 .card__header{
     display: flex;
@@ -51,16 +76,61 @@ body{
 .panel{
   display: none;
 }
+.format{
+  margin: 10px;
+  padding: 10px
+}
+.button{
+  border: none;
+  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-weight: 400;
+  margin:10px;
+  padding: 5px;
+  box-shadow: 0 0 8px 8px rgba(193, 247, 98, 0.7);
+}
+.button:hover{
+  color: var(--secondary-color--light);
+}
+.search{
+  color: var(--primary-color);
+}
+input{
+  background-color: var(--primary-color--light);
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 2px;
+}
+.create{
+  max-width: 500px;
+  color: var(--primary-color);
+}
+#create-button{
+  width: 100px;
+  height: 50px;
+  align-self: center;
+}
+#save-button{
+  float: right;
+}
+#more-button{
+  height: 50px;
+  font-weight: 400;
+  font-size: 20px;
+  margin: 20px;
+}
 /*loader*/
 .lds-ripple {
     display: inline-block;
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
   }
   .lds-ripple div {
     position: absolute;
-    border: 4px solid red;
+    border: 4px solid var(--secondary-color--light);
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
