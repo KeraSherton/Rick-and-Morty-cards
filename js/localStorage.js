@@ -27,6 +27,7 @@
         gender= localStorage.getItem("gender");
         genLocation= localStorage.getItem("genLocation");
         image= localStorage.getItem("image");
+        name && image ? 
         document.getElementById("collection-content").insertAdjacentHTML('afterbegin',  `
             <article class="card">
                 <header class="card__header">
@@ -37,7 +38,7 @@
                 <p class="card__description"> <b> Status:</b> ${status} </p>
                 <p class="card__description"> <b> Gender:</b> ${gender} </p>
                 <p class="card__description"> <b> Location:</b> ${genLocation} </p>
-            </article>`);
+            </article>`) : alert("Pass at least name and image to create card!");
     }
 
 
