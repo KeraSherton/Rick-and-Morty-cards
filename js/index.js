@@ -63,7 +63,7 @@ async searchPerson(){
     this.cards.forEach(({id})=> document.getElementById(id).classList.add('hide'));
     this.newCards ? this.cards.forEach(({id})=> document.getElementById(id).classList.add('hide')): null ;
     const searchQuery= this.search.value.toLowerCase();
-    // searchQuery ? this.button.classList.add('hide') : this.button.classList.remove('hide');
+    searchQuery ? this.button.classList.add('hide') : this.button.classList.remove('hide');
     
     const {results}= await this.fetchData(`${this.API}?name=${searchQuery}`);
     this.cards=[...this.cards, ...results];

@@ -33,7 +33,7 @@ body{
 .collection__heading{
     color: var(--secondary-color);
     text-align: center;
-    font-size: 56px;
+    font-size: 72px;
     text-shadow: -1px -1px 0px #000,
     0px -1px 0px #000,
     1px -1px 0px #000,
